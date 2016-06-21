@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<title>HeadHunter | WiFi</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+	<div class="main_cont">
+		<div class="age">0+</div>
+		<div class="enter_img"> </div>
+
+		<form id="code_form" action="input_code.html">
+
+			<div class="notification">Пожалуйста укажите</div>
+
+
+			<div class="error_wrap">
+				<input name="email" type="email" class="email"  placeholder="Ваш email">
+				<input name="field" type="text" class="number" id="number"  placeholder="Ваш Телефон">				
+			</div>
+			
+
+			<input name="submit" type="submit" value="ПОЛУЧИТЬ КОД" class="connect_btn">
+			<div class="main_slug">Работа мечты на <a target="blank" href="https://hh.ru/">hh.ru</a></div>
+
+
+			<div class="descr"><input name="agree"  type="checkbox" value="1"></input> Даю согласие на обработку моих данных. <a target="blank" href="https://ryazan.hh.ru/account/agreement">Ознакомиться с условиями</a></div>
+
+		</form>
+
+	</div>	
+
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+	<script type="text/javascript" src="js/jquery.maskedinput.js" ></script>
+	<script type="text/javascript" src="js/jquery.validate.js"></script>
+	<script type="text/javascript">
+		
+
+
+		$(document).ready( function(){
+
+			$("#number").mask("+7(999)999-99-99");
+
+			
+
+			$("#code_form").validate({
+
+				rules: {
+					email: {
+						required: true,
+						email: true,						
+						minlength: 4
+					},
+
+					field: {
+						required: true,
+						number: true
+					},
+
+					agree: {
+						required: true
+					}
+
+				}, //rules end
+
+				messages:{
+					email:{					
+						required:"Пожалуйста укажите корректный email",
+						minlength:"Пожалуйста укажите корректный email",
+						email: "Пожалуйста укажите корректный email"
+					},
+					field:{
+						number:"Пожалуйста укажите корректный номер",
+						required:"Пожалуйста укажите корректный номер"
+
+					},
+
+					agree: {
+						required: "*"
+					}					
+
+				}
+
+
+
+
+			});//validate end
+
+
+		}); // document.ready
+
+
+
+
+
+
+
+
+	</script>
+
+</body>
+</html>
